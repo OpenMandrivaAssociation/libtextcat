@@ -151,6 +151,7 @@ rm -r %{buildroot}
 %dir %{_datadir}/%{name}
 %{_libdir}/lib*.so.%{major}*
 %{_datadir}/%{name}/*.lm
+%{_datadir}/%{name}/fpdb.conf
 
 %files -n %{develname}
 %defattr(-,root,root)
