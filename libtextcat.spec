@@ -6,7 +6,7 @@
 Summary:	Text categorization library
 Name:		libtextcat
 Version:	2.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		System/Libraries
 License:	BSD
 Source0:	http://software.wise-guys.nl/download/%{name}-%{version}.tar.bz2
@@ -39,8 +39,8 @@ to perform with near-perfect accuracy.
 Summary:	Development files and headers for {name}
 Group:		Development/Other
 Requires:	%{libname} = %{version}-%{release}
-Provides:	%{name} = %{version}-%{release}
-Provides:	%{lname} = %{version}-%{release}
+Provides:	%{name}-devel = %{version}-%{release}
+Provides:	%{lname}-devel = %{version}-%{release}
 
 %description -n %{develname}
 Development files and headers for {name}.
