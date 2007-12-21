@@ -17,6 +17,7 @@ Source4:	http://external.openoffice.org/source/browse/*checkout*/external/libtex
 URL:		http://software.wise-guys.nl/libtextcat
 Patch0:		libtextcat-2.2-exportapi.patch
 Patch1:		libtextcat-2.2-OOo.patch
+Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Libtextcat is a library with functions that implement the classification
