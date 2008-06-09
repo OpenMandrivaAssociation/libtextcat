@@ -138,9 +138,13 @@ cp -p %{SOURCE2} %{buildroot}%{_datadir}/libtextcat/chinese_simplified.lm
 cp -p %{SOURCE3} %{buildroot}%{_datadir}/libtextcat/chinese_traditional.lm
 cp -p %{SOURCE4} %{buildroot}%{_datadir}/libtextcat/japanese.lm
 
+%if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
+%endif
 
+%if %mdkversion < 200900
 %postun -n %{libname} -p /sbin/ldconfig
+%endif
 
 %clean
 rm -r %{buildroot}
