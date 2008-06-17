@@ -6,7 +6,7 @@
 Summary:	Text categorization library
 Name:		libtextcat
 Version:	2.2
-Release:	%mkrel 2
+Release:	%mkrel 3
 Group:		System/Libraries
 License:	BSD
 Source0:	http://software.wise-guys.nl/download/%{name}-%{version}.tar.bz2
@@ -25,25 +25,25 @@ technique described in Cavnar & Trenkle, "N-Gram-Based Text Categorization".
 It was primarily developed for language guessing, a task on which it is known
 to perform with near-perfect accuracy.
 
-%package -n %{libname}
+%package -n	%{libname}
 Summary:	Text categorization library
 Group:		System/Libraries
 
-%description -n %{libname}
+%description -n	%{libname}
 Libtextcat is a library with functions that implement the classification
 technique described in Cavnar & Trenkle, "N-Gram-Based Text Categorization".
 It was primarily developed for language guessing, a task on which it is known
 to perform with near-perfect accuracy.
 
-%package -n %{develname}
-Summary:	Development files and headers for {name}
+%package -n	%{develname}
+Summary:	Development files and headers for %{name}
 Group:		Development/Other
 Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Provides:	%{lname}-devel = %{version}-%{release}
 
-%description -n %{develname}
-Development files and headers for {name}.
+%description -n	%{develname}
+Development files and headers for %{name}.
 
 %prep
 %setup -q
