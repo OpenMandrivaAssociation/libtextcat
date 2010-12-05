@@ -6,7 +6,7 @@
 Summary:	Text categorization library
 Name:		libtextcat
 Version:	2.2
-Release:	%mkrel 6
+Release:	%mkrel 7
 Group:		System/Libraries
 License:	BSD
 Source0:	http://software.wise-guys.nl/download/%{name}-%{version}.tar.bz2
