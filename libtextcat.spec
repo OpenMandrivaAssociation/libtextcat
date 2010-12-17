@@ -47,11 +47,12 @@ Development files and headers for %{name}.
 
 %prep
 %setup -q
-%patch0 -p1 -b .exportapi.patch
-%patch1 -p1 -b .ooo.patch
+%patch0 -p1 -b .exportapi.patch~
+%patch1 -p1 -b .ooo.patch~
 
 %build
 autoreconf -f -i
+CFLAGS="%{optflags} -O3" \
 %configure2_5x \
 	--disable-static
 %make
