@@ -6,14 +6,17 @@
 Summary:	Text categorization library
 Name:		libtextcat
 Version:	2.2
-Release:	%mkrel 7
+Release:	%mkrel 8
 Group:		System/Libraries
 License:	BSD
 Source0:	http://software.wise-guys.nl/download/%{name}-%{version}.tar.bz2
-Source1:	http://external.openoffice.org/source/browse/*checkout*/external/libtextcat/data/new_fingerprints/fpdb.conf
-Source2:	http://external.openoffice.org/source/browse/*checkout*/external/libtextcat/data/new_fingerprints/lm/chinese_simplified.lm
-Source3:	http://external.openoffice.org/source/browse/*checkout*/external/libtextcat/data/new_fingerprints/lm/chinese_traditional.lm
-Source4:	http://external.openoffice.org/source/browse/*checkout*/external/libtextcat/data/new_fingerprints/lm/japanese.lm
+Source1:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/data/new_fingerprints/fpdb.conf
+Source2:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/data/new_fingerprints/lm/chinese_simplified.lm
+Source3:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/data/new_fingerprints/lm/chinese_traditional.lm
+Source4:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/data/new_fingerprints/lm/japanese.lm
+Source5:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/data/new_fingerprints/lm/luxembourgish.lm
+Source6:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/data/new_fingerprints/lm/mongolian_cyrillic.lm
+Source7:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/data/new_fingerprints/lm/zulu.lm
 URL:		http://software.wise-guys.nl/libtextcat
 Patch0:		libtextcat-2.2-exportapi.patch
 Patch1:		libtextcat-2.2-OOo.patch
@@ -138,6 +141,9 @@ iconv -f ISO-8859-1 -t UTF-8 vietnamese.lm > %{buildroot}%{_datadir}/libtextcat/
 cp -p %{SOURCE2} %{buildroot}%{_datadir}/libtextcat/chinese_simplified.lm
 cp -p %{SOURCE3} %{buildroot}%{_datadir}/libtextcat/chinese_traditional.lm
 cp -p %{SOURCE4} %{buildroot}%{_datadir}/libtextcat/japanese.lm
+cp -p %{SOURCE5} %{buildroot}%{_datadir}/libtextcat/luxembourgish.lm
+cp -p %{SOURCE6} %{buildroot}%{_datadir}/libtextcat/mongolian_cyrillic.lm
+cp -p %{SOURCE7} %{buildroot}%{_datadir}/libtextcat/zulu.lm
 
 %clean
 rm -r %{buildroot}
