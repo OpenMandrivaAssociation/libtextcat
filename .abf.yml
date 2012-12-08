@@ -1,9 +1,2 @@
 sources:
-  "chinese_simplified.lm:"	4a0192ce41b01b12d5cf87d374fcec34b9f90576
-  "chinese_traditional.lm:"	cef2ea9d4791ec58843a166173d56b6b82c2bcea
-  "fpdb.conf:"	1062e2cfe2db18b5cdbf33c365428bc5a5f8dbec
-  "japanese.lm:"	9daf9c2db95b77cf23f4d622a90eaca1fe3c8af4
-  "libtextcat-2.2.tar.bz2:"	5b6c7ead9dffa79c7d5ec759b55f5a82ed4a058f
-  "luxembourgish.lm:"	2e533f3e1b71010b7671e470c5c2e01b95060fcb
-  "mongolian_cyrillic.lm:"	499abd93c1a997613a18c5405baa95659586a47b
-  "zulu.lm:"	68cd526fa06c03dcc4deb7a65ee4e3ffaa1da2ea
+  "libtextcat-2.2.tar.bz2": 5b6c7ead9dffa79c7d5ec759b55f5a82ed4a058f
