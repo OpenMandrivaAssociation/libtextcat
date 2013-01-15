@@ -7,7 +7,7 @@ Summary:	Text categorization library
 Name:		libtextcat
 Version:	2.2
 %define subrel 1
-Release:	%mkrel 10
+Release:	11
 Group:		System/Libraries
 License:	BSD
 Source0:	http://software.wise-guys.nl/download/%{name}-%{version}.tar.bz2
@@ -21,7 +21,7 @@ Source7:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/dat
 URL:		http://software.wise-guys.nl/libtextcat
 Patch0:		libtextcat-2.2-exportapi.patch
 Patch1:		libtextcat-2.2-OOo.patch
-Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
+Patch2:		libtextcat-automake-1.13.patch
 
 %description
 Libtextcat is a library with functions that implement the classification
@@ -51,8 +51,7 @@ Development files and headers for %{name}.
 
 %prep
 %setup -q
-%patch0 -p1 -b .exportapi.patch~
-%patch1 -p1 -b .ooo.patch~
+%apply_patches
 
 %build
 autoreconf -f -i
