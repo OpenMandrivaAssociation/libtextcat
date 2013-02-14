@@ -1,15 +1,15 @@
-%define lname textcat
-%define major 0
+%define lname	textcat
+%define major	0
 %define libname %mklibname %{lname} %{major}
-%define develname %mklibname %{lname} -d
+%define devname %mklibname %{lname} -d
 
 Summary:	Text categorization library
 Name:		libtextcat
 Version:	2.2
-%define subrel 1
 Release:	11
 Group:		System/Libraries
 License:	BSD
+Url:		http://software.wise-guys.nl/libtextcat
 Source0:	http://software.wise-guys.nl/download/%{name}-%{version}.tar.bz2
 Source1:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/data/new_fingerprints/fpdb.conf
 Source2:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/data/new_fingerprints/lm/chinese_simplified.lm
@@ -18,7 +18,6 @@ Source4:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/dat
 Source5:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/data/new_fingerprints/lm/luxembourgish.lm
 Source6:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/data/new_fingerprints/lm/mongolian_cyrillic.lm
 Source7:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/data/new_fingerprints/lm/zulu.lm
-URL:		http://software.wise-guys.nl/libtextcat
 Patch0:		libtextcat-2.2-exportapi.patch
 Patch1:		libtextcat-2.2-OOo.patch
 Patch2:		libtextcat-automake-1.13.patch
@@ -39,14 +38,14 @@ technique described in Cavnar & Trenkle, "N-Gram-Based Text Categorization".
 It was primarily developed for language guessing, a task on which it is known
 to perform with near-perfect accuracy.
 
-%package -n	%{develname}
+%package -n	%{devname}
 Summary:	Development files and headers for %{name}
 Group:		Development/Other
 Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Provides:	%{lname}-devel = %{version}-%{release}
 
-%description -n	%{develname}
+%description -n	%{devname}
 Development files and headers for %{name}.
 
 %prep
@@ -54,18 +53,14 @@ Development files and headers for %{name}.
 %apply_patches
 
 %build
-autoreconf -f -i
+autoreconf -fi
 CFLAGS="%{optflags} -O3" \
 %configure2_5x \
 	--disable-static
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
-
-rm -f %{buildroot}%{_libdir}/*.la
-
 mkdir -p %{buildroot}%{_datadir}/libtextcat
 
 cp -p %{SOURCE1} %{buildroot}%{_datadir}/libtextcat
@@ -145,19 +140,14 @@ cp -p %{SOURCE5} %{buildroot}%{_datadir}/libtextcat/luxembourgish.lm
 cp -p %{SOURCE6} %{buildroot}%{_datadir}/libtextcat/mongolian_cyrillic.lm
 cp -p %{SOURCE7} %{buildroot}%{_datadir}/libtextcat/zulu.lm
 
-%clean
-rm -r %{buildroot}
-
 %files -n %{libname}
-%defattr(-,root,root)
-%doc ChangeLog README LICENSE TODO
 %dir %{_datadir}/%{name}
 %{_libdir}/lib*.so.%{major}*
 %{_datadir}/%{name}/*.lm
 %{_datadir}/%{name}/fpdb.conf
 
-%files -n %{develname}
-%defattr(-,root,root)
+%files -n %{devname}
+%doc ChangeLog README LICENSE TODO
 %dir %{_includedir}/%{name}
 %{_bindir}/createfp
 %{_libdir}/*.so
