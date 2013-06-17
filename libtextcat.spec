@@ -51,9 +51,9 @@ Development files and headers for %{name}.
 %prep
 %setup -q
 %apply_patches
+autoreconf -fi
 
 %build
-autoreconf -fi
 CFLAGS="%{optflags} -O3" \
 %configure2_5x \
 	--disable-static
@@ -152,53 +152,4 @@ cp -p %{SOURCE7} %{buildroot}%{_datadir}/libtextcat/zulu.lm
 %{_bindir}/createfp
 %{_libdir}/*.so
 %{_includedir}/%{name}/*
-
-
-%changelog
-* Tue Sep 20 2011 Oden Eriksson <oeriksson@mandriva.com> 2.2-8.1
-- built for updates
-
-* Fri Dec 17 2010 Per Øyvind Karlsen <peroyvind@mandriva.org> 2.2-8mdv2011.0
-+ Revision: 622665
-- update fingerprints
-- ditch scriptlets for ancient releases
-- don't lower optimization level, use -O3 as per upstream defaults
-
-* Sun Dec 05 2010 Oden Eriksson <oeriksson@mandriva.com> 2.2-7mdv2011.0
-+ Revision: 609783
-- rebuild
-
-* Sat Feb 13 2010 Tomasz Pawel Gajc <tpg@mandriva.org> 2.2-6mdv2010.1
-+ Revision: 505580
-- rebuild
-
-  + Thierry Vignaud <tv@mandriva.org>
-    - rebuild
-
-* Sun Jun 22 2008 Funda Wang <fwang@mandriva.org> 2.2-4mdv2009.0
-+ Revision: 227919
-- rebuild
-
-* Tue Jun 17 2008 Per Øyvind Karlsen <peroyvind@mandriva.org> 2.2-3mdv2009.0
-+ Revision: 223440
-- fix typo in summary for -devel package
-
-  + Pixel <pixel@mandriva.com>
-    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
-
-  + Olivier Blin <oblin@mandriva.com>
-    - restore BuildRoot
-
-  + Thierry Vignaud <tv@mandriva.org>
-    - kill re-definition of %%buildroot on Pixel's request
-
-* Wed Dec 12 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 2.2-2mdv2008.1
-+ Revision: 117639
-- correct provides for devel package
-
-* Thu Nov 01 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 2.2-1mdv2008.1
-+ Revision: 104679
-- fix file list
-- import libtextcat
-
 
