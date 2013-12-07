@@ -6,7 +6,7 @@
 Summary:	Text categorization library
 Name:		libtextcat
 Version:	2.2
-Release:	14
+Release:	15
 Group:		System/Libraries
 License:	BSD
 Url:		http://software.wise-guys.nl/libtextcat
