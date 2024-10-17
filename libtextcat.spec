@@ -9,7 +9,7 @@ Version:	2.2
 Release:	21
 Group:		System/Libraries
 License:	BSD
-Url:		http://software.wise-guys.nl/libtextcat
+Url:		https://software.wise-guys.nl/libtextcat
 Source0:	http://software.wise-guys.nl/download/%{name}-%{version}.tar.bz2
 Source1:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/data/new_fingerprints/fpdb.conf
 Source2:	http://hg.services.openoffice.org/hg/DEV300/raw-file/tip/libtextcat/data/new_fingerprints/lm/chinese_simplified.lm
