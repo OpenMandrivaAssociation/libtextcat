@@ -22,6 +22,11 @@ Patch0:		libtextcat-2.2-exportapi.patch
 Patch1:		libtextcat-2.2-OOo.patch
 Patch2:		libtextcat-automake-1.13.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 Libtextcat is a library with functions that implement the classification
 technique described in Cavnar & Trenkle, "N-Gram-Based Text Categorization".
